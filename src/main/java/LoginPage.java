@@ -7,6 +7,8 @@ public class LoginPage {
     private By usernameFieldLocator = By.xpath("//input[@placeholder='Username']");
     private By passwordFieldLocator = By.xpath("//input[@placeholder='Password']");
     private By loginButtonLocator = By.xpath("//button[@type='submit']");
+    private By dashboardItem = By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'][normalize-space()='Dashboard']");
+
     private WebDriver driver;
 
     LoginPage(WebDriver driver){
@@ -29,6 +31,9 @@ public class LoginPage {
         find(loginButtonLocator).click();
     }
 
+    boolean isDashboardItemDisplayed(){
+        return find(dashboardItem).isDisplayed();
+    }
 
 
 }
